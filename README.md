@@ -1,61 +1,70 @@
 # Modul 295 Prüfung
 
-**Author:** Mischa Barmettler
+**Autor:** Mischa Barmettler
 
-## Endpoints
+## Anleitung 
 
-### 1. List all tasks
+1. Installieren Sie Node.js
+2. Installieren Sie Docker
+3. Öffnen Sie das Projekt und starten Sie es mit einem Node.js Container
+4. Installieren Sie die gegebenen Module
+5. Wechseln Sie in das Verzeichnis "src"
+6. Starten Sie die Anwendung mit dem Befehl 'node main.js'
+
+## Endpunkte
+
+### 1. Alle Tasks auflisten
 
 - **URL:** `/tasks`
-- **Method:** `GET`
-- **Authentication:** Required
-- **Description:** Retrieves a list of all tasks.
+- **Methode:** `GET`
+- **Authentifizierung:** Erforderlich
+- **Beschreibung:** Stellt alle Tasks in der Liste dar.
 
-### 2. Add a new task
+### 2. Einen Task hinzufügen
 
 - **URL:** `/tasks`
-- **Method:** `POST`
-- **Authentication:** Required
-- **Description:** Adds a new task to the list.
+- **Methode:** `POST`
+- **Authentifizierung:** Erforderlich
+- **Beschreibung:** Fügt einen neuen Task zur Liste hinzu.
 
-### 3. Get task by ID
-
-- **URL:** `/tasks/:taskID`
-- **Method:** `GET`
-- **Authentication:** Required
-- **Description:** Retrieves details of a specific task by its ID.
-
-### 4. Update task by ID
+### 3. Task mit ID auflisten
 
 - **URL:** `/tasks/:taskID`
-- **Method:** `PATCH`
-- **Authentication:** Required
-- **Description:** Updates details of a specific task by its ID.
+- **Methode:** `GET`
+- **Authentifizierung:** Erforderlich
+- **Beschreibung:** Zeigt einen Task mit der angegebenen ID an.
 
-### 5. Delete task by ID
+### 4. Task aktualisieren
 
 - **URL:** `/tasks/:taskID`
-- **Method:** `DELETE`
-- **Authentication:** Required
-- **Description:** Deletes a specific task by its ID.
+- **Methode:** `PATCH`
+- **Authentifizierung:** Erforderlich
+- **Beschreibung:** Aktualisiert einen spezifischen Task mit der angegebenen ID.
 
-### 6. User Login
+### 5. Task löschen
+
+- **URL:** `/tasks/:taskID`
+- **Methode:** `DELETE`
+- **Authentifizierung:** Erforderlich
+- **Beschreibung:** Löscht einen Task mit der angegebenen ID.
+
+### 6. Benutzer Login
 
 - **URL:** `/login`
-- **Method:** `POST`
-- **Authentication:** Not Required
-- **Description:** Logs in a user with valid credentials.
+- **Methode:** `POST`
+- **Authentifizierung:** Nicht Erforderlich
+- **Beschreibung:** Meldet einen Benutzer mit den richtigen Anmeldeinformationen an. (Erfordert eine E-Mail-Adresse).
 
-### 7. Verify User Login
+### 7. Benutzer verifizieren
 
 - **URL:** `/verify`
-- **Method:** `GET`
-- **Authentication:** Required
-- **Description:** Verifies if a user is logged in.
+- **Methode:** `GET`
+- **Authentifizierung:** Erforderlich
+- **Beschreibung:** Überprüft, ob ein Benutzer angemeldet ist.
 
-### 8. User Logout
+### 8. Benutzer Logout
 
 - **URL:** `/logout`
-- **Method:** `DELETE`
-- **Authentication:** Required
-- **Description:** Logs out the currently logged-in user.
+- **Methode:** `DELETE`
+- **Authentifizierung:** Erforderlich
+- **Beschreibung:** Meldet einen angemeldeten Benutzer ab.
