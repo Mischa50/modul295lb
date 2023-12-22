@@ -5,13 +5,15 @@ const app = express();
 const { randomUUID } = require('node:crypto'); // Diese Linie wurde mir von Matian gegeben
 
 const port = 3000;
-const cookie = require("./login");
+const loginCode = require("./login");
+
+// Ich habe die gestrigen Aufgaben als Referenz genutzt
 
 app.use(express.json());
 
-app.use(cookie);
+app.use(loginCode);
 
-// Let tasks array mostly generated with ChatGPT
+// Dierser Array wurde mit ChatGPT erstellt
 const tasks = [
   {
     taskID: "1", title: "Wake up", time: "07:00", author: "John Doe", createdDate: "2023-01-01", completedDate: "2023-02-07",
@@ -45,13 +47,13 @@ const tasks = [
   },
 ];
 
-app.get('/tasks', cookie, (request, response) => {
+app.get('/tasks', loginCode, (request, response) => {
   if (request.session.email) {
     response.status(200).send(JSON.stringify(tasks));
   } else { return response.status(401).json({ error: "Not logged in" }); }
 });
 
-app.post('/tasks', cookie, (request, response) => {
+app.post('/tasks', loginCode, (request, response) => {
   if (request.session.email) {
     const newTask = request.body;
     newTask.taskID = randomUUID(); // Diese Linie wurde mir von Matian gegeben
@@ -60,7 +62,7 @@ app.post('/tasks', cookie, (request, response) => {
   } else { return response.status(401).json({ error: "Not logged in" }); }
 });
 
-app.get('/tasks/:taskID', cookie, (request, response) => {
+app.get('/tasks/:taskID', loginCode, (request, response) => {
   if (request.session.email) {
     const task = tasks.find((task) => task.taskID === request.params.taskID);
 
@@ -72,7 +74,7 @@ app.get('/tasks/:taskID', cookie, (request, response) => {
   } else { return response.status(401).json({ error: "Not logged in" }); }
 });
 
-app.patch("/tasks/:taskID", cookie, (request, response) => {
+app.patch("/tasks/:taskID", loginCode, (request, response) => {
   if (request.session.email) {
     const keys = Object.keys(request.body);
     const taskToUpdate = tasks.find((task) => task.taskID === request.params.taskID);
@@ -86,7 +88,7 @@ app.patch("/tasks/:taskID", cookie, (request, response) => {
   } else { return response.status(401).json({ error: "Not logged in" }); }
 });
 
-app.delete('/tasks/:taskID', cookie, (request, response) => {
+app.delete('/tasks/:taskID', loginCode, (request, response) => {
   if (request.session.email) {
     const { taskID } = request.params;
     const existingTaskIndex = tasks.findIndex((task) => task.taskID === taskID);
