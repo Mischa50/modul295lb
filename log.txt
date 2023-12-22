@@ -1,0 +1,23 @@
+commit 06ee8c59266e0c31e6a7cd9f44392d814bfd8d4a
+Author: Mischa <tiebarm@tie.ch>
+Date:   Fri Dec 22 15:33:36 2023 +0000
+
+    chore : testing.json + README.md
+
+commit 1537ede28dfbf441aa386665e9757b441705b9dc
+Author: Mischa <tiebarm@tie.ch>
+Date:   Fri Dec 22 13:37:32 2023 +0000
+
+    chore: Authentifizierung implementiert
+
+commit 14afc333acdd53fd78235f42da6bafcc3f9feb98
+Author: Mischa <tiebarm@tie.ch>
+Date:   Fri Dec 22 10:21:07 2023 +0000
+
+    chore : Hauptanforderungen implementiert
+
+commit 855618fcf563533c34d213e0dc4e6cc426b42176
+Author: Mischa <tiebarm@tie.ch>
+Date:   Fri Dec 22 09:11:35 2023 +0100
+
+    first commit
